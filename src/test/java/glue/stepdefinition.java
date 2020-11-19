@@ -43,7 +43,7 @@ public class stepdefinition
 		//launch site
 		sh.tu.launchSite(sh.p.getProperty("url"));
 		w.until(ExpectedConditions.visibilityOf(pageobj.logo));
-		sh.s.log("demowebshop Site launched sucessfully");
+		sh.s.log("demowebshop Site launched Successfully");
 	}
 	
 	
@@ -59,12 +59,12 @@ public class stepdefinition
 		String actual=pageobj.getwelcomemsg();
 		if(expected.equals(actual))
 		{
-			sh.s.log("Welcome, Please Sign In! Message Dispalyed TEST PASSED");
+			sh.s.log("Welcome, Please Sign In! Message Displayed TEST PASSED");
 		}
 		else
 		{
 			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
-			sh.s.attach(b,"image/png","Welcome, Please Sign In! Message Not DispalyedTEST FAILED");
+			sh.s.attach(b,"image/png","Welcome, Please Sign In! Message Not Displayed TEST FAILED");
 			Assert.assertTrue(false);
 		}
 		}
@@ -100,12 +100,12 @@ public class stepdefinition
 		String actual=accid.getText();
 		if(expected.equals(actual))
 		{
-			sh.s.log("account ID Dispalyed Test passed");
+			sh.s.log("account ID Displayed Test passed");
 		}
 		else
 		{
 			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
-			sh.s.attach(b,"image/png","account ID not Dispalyed correctly Test failed");
+			sh.s.attach(b,"image/png","account ID not Displayed correctly Test failed");
 			Assert.assertTrue(false);
 		}
 	}
@@ -174,12 +174,12 @@ public class stepdefinition
 		String expectednotfi=expectedmsg;
 		if(expectednotfi.equalsIgnoreCase(trimnotfi))
 		{
-			sh.s.log("The product has been added to your shopping cart Message Dispalyed TEST PASSED");
+			sh.s.log("The product has been added to your shopping cart Message Displayed TEST PASSED");
 		}
 		else
 		{
 			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
-			sh.s.attach(b,"image/png","The product has been added to your shopping cart Message Not Dispalyed TEST FAILED");
+			sh.s.attach(b,"image/png","The product has been added to your shopping cart Message Not Displayed TEST FAILED");
 			Assert.assertTrue(false);
 		}
 		
@@ -195,7 +195,7 @@ public class stepdefinition
     	w.until(ExpectedConditions.visibilityOf(pageobj.cart)).click();
     	w.until(ExpectedConditions.visibilityOf(pageobj.subtotal));
     	String subtotalamount=pageobj.getsubtotal();
-    	sh.s.log("Sub-Total Price for selected book is "+subtotalamount+"");
+    	sh.s.log("Sub-Total Price for selected books is "+subtotalamount+"");
     	}
     	catch (Exception ex)
     	{
@@ -267,12 +267,12 @@ public class stepdefinition
     	String actualcodmsg=(String) sh.driver.executeScript("return(arguments[0].textContent);",pageobj.paybyCOD);
 		if(expectedmsg.equalsIgnoreCase(actualcodmsg))
 		{
-			sh.s.log("You will pay by COD Message Dispalyed TEST PASSED");
+			sh.s.log("You will pay by COD Message Displayed TEST PASSED");
 		}
 		else
 		{
 			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
-			sh.s.attach(b,"image/png","You will pay by COD Message Not Dispalyed TEST FAILED");
+			sh.s.attach(b,"image/png","You will pay by COD Message Not Displayed TEST FAILED");
 			Assert.assertTrue(false);
 		}
 		w.until(ExpectedConditions.visibilityOf(pageobj.PaymentInfosave)).click();
@@ -300,12 +300,13 @@ public class stepdefinition
         System.out.println(ordernumber);
 		if(expectedmsg.equals(actualmsg))
 		{
-			sh.s.log("Your order has been successfully processed! is Dispalyed, and Order ID is "+ordernumber+" TEST PASSED");
+			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
+			sh.s.attach(b,"image/png","Your order has been Successfully processed! is Displayed, and Order ID is "+ordernumber+" TEST PASSED");
 		}
 		else
 		{
 			byte[] b=sh.driver.getScreenshotAs(OutputType.BYTES);
-			sh.s.attach(b,"image/png","Your order has been successfully processed! is  Not Dispalyed TEST FAILED");
+			sh.s.attach(b,"image/png","Your order has been Successfully processed! is  Not Displayed TEST FAILED");
 			Assert.assertTrue(false);
 		}
     	}

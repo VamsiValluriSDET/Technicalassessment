@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 		features={"src\\test\\resources\\features\\bookanorder.feature"},
 		glue={"glue"},
 		monochrome=true,
-		plugin={"pretty","html:target\\Output11202020.html"}
+		plugin={"pretty","html:target\\Output_2_11202020.html"}
 		)
 
 public class runner01 extends AbstractTestNGCucumberTests
